@@ -11,17 +11,12 @@ function showTime() {
         hour = today.getHours(),
         min = today.getMinutes(),
         sec = today.getSeconds();
-    
-    // Set AM or PM
-    const amPm = hour >= 12 ? "PM" : "AM";
-
-    //12hr Format
-    hour = hour % 12 || 12;
 
     //Output Time
-    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)} ${amPm}`;
+    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}`;
 
     //setTimeout(showTime, 1000);
+    setTimeout(showTime, 1000);
 }
 
 //Add Zeros
@@ -45,6 +40,7 @@ function setBgGreet() {
         document.body.style.background = "url('../img/afternoon.jpg') no-repeat 50% 50%";
         document.body.style.backgroundSize = "cover";
         greeting.textContent = "Good Afternoon";
+        document.body.style.color = "white";
     } else {
         //Evening
         document.body.style.background = "url('../img/night.jpg') no-repeat 50% 50%";
